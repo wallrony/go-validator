@@ -1,4 +1,4 @@
-module go-validator
+module github.com/wallrony/go-validator
 
 go 1.18
 

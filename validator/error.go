@@ -1,7 +1,7 @@
 package validator
 
 import (
-	"go-validator/rules"
+	"github.com/wallrony/go-validator/rules"
 	"strings"
 )
 

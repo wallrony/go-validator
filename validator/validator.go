@@ -2,7 +2,7 @@ package validator
 
 import (
 	"encoding/json"
-	"go-validator/rules"
+	"github.com/wallrony/go-validator/rules"
 	"reflect"
 )
 

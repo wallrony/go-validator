@@ -2,7 +2,7 @@ package validator
 
 import (
 	"fmt"
-	"go-validator/rules"
+	"github.com/wallrony/go-validator/rules"
 	"reflect"
 	"regexp"
 	"strings"
