@@ -2,10 +2,11 @@ package validator
 
 import (
 	"fmt"
-	"github.com/wallrony/go-validator/rules"
 	"reflect"
 	"regexp"
 	"strings"
+
+	"github.com/wallrony/go-validator/rules"
 
 	"golang.org/x/exp/slices"
 )
@@ -148,7 +149,11 @@ func (f *field) GenerateNestedFields() []Field {
 	} else {
 		return []Field{} // unknown type
 	}
-	nestedFields := buildValidators(nestedFieldInterfaceValue)
+	var nestedFields []Field
+	var nestedFieldInterfaceType = reflect.TypeOf(nestedFieldInterfaceValue).Kind()
+	if nestedFieldInterfaceType == reflect.Struct {
+		nestedFields = buildValidators(nestedFieldInterfaceValue)
+	}
 	var validNestedFieldNames []string
 	if strings.Contains(f.validationTagValue, nestedPropsTag) {
 		if ok := nestedPropsCompiler.Match([]byte(f.validationTagValue)); ok {

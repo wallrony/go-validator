@@ -599,3 +599,4 @@ ERROR: 'profile.firstName' field of type 'string' is missing or empty
 		Profiles []Profile `json:"profiles" validate:"required"`
 	}
 	```
+2. Não é possível identificar o índice de um atributo com erro quando há uma lista de estruturas;
